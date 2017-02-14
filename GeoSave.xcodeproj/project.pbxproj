@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12B741A51E5350D200DCCA79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B741A41E5350D200DCCA79 /* AppDelegate.swift */; };
+		12B741A71E5350D200DCCA79 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B741A61E5350D200DCCA79 /* MasterViewController.swift */; };
+		12B741A91E5350D200DCCA79 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B741A81E5350D200DCCA79 /* DetailViewController.swift */; };
+		12B741AC1E5350D200DCCA79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12B741AA1E5350D200DCCA79 /* Main.storyboard */; };
+		12B741AE1E5350D200DCCA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B741AD1E5350D200DCCA79 /* Assets.xcassets */; };
+		12B741B11E5350D200DCCA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12B741AF1E5350D200DCCA79 /* LaunchScreen.storyboard */; };
+		12B741BC1E5350D200DCCA79 /* GeoSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B741BB1E5350D200DCCA79 /* GeoSaveTests.swift */; };
+		12B741C71E5350D200DCCA79 /* GeoSaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B741C61E5350D200DCCA79 /* GeoSaveUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		12B741B81E5350D200DCCA79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12B741991E5350D200DCCA79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12B741A01E5350D200DCCA79;
+			remoteInfo = GeoSave;
+		};
+		12B741C31E5350D200DCCA79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12B741991E5350D200DCCA79 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12B741A01E5350D200DCCA79;
+			remoteInfo = GeoSave;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12B741A11E5350D200DCCA79 /* GeoSave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoSave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B741A41E5350D200DCCA79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		12B741A61E5350D200DCCA79 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		12B741A81E5350D200DCCA79 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		12B741AB1E5350D200DCCA79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		12B741AD1E5350D200DCCA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12B741B01E5350D200DCCA79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12B741B21E5350D200DCCA79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12B741B71E5350D200DCCA79 /* GeoSaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoSaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B741BB1E5350D200DCCA79 /* GeoSaveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoSaveTests.swift; sourceTree = "<group>"; };
+		12B741BD1E5350D200DCCA79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12B741C21E5350D200DCCA79 /* GeoSaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoSaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B741C61E5350D200DCCA79 /* GeoSaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoSaveUITests.swift; sourceTree = "<group>"; };
+		12B741C81E5350D200DCCA79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12B7419E1E5350D200DCCA79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B741B41E5350D200DCCA79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B741BF1E5350D200DCCA79 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12B741981E5350D200DCCA79 = {
+			isa = PBXGroup;
+			children = (
+				12B741A31E5350D200DCCA79 /* GeoSave */,
+				12B741BA1E5350D200DCCA79 /* GeoSaveTests */,
+				12B741C51E5350D200DCCA79 /* GeoSaveUITests */,
+				12B741A21E5350D200DCCA79 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12B741A21E5350D200DCCA79 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12B741A11E5350D200DCCA79 /* GeoSave.app */,
+				12B741B71E5350D200DCCA79 /* GeoSaveTests.xctest */,
+				12B741C21E5350D200DCCA79 /* GeoSaveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12B741A31E5350D200DCCA79 /* GeoSave */ = {
+			isa = PBXGroup;
+			children = (
+				12B741A41E5350D200DCCA79 /* AppDelegate.swift */,
+				12B741A61E5350D200DCCA79 /* MasterViewController.swift */,
+				12B741A81E5350D200DCCA79 /* DetailViewController.swift */,
+				12B741AA1E5350D200DCCA79 /* Main.storyboard */,
+				12B741AD1E5350D200DCCA79 /* Assets.xcassets */,
+				12B741AF1E5350D200DCCA79 /* LaunchScreen.storyboard */,
+				12B741B21E5350D200DCCA79 /* Info.plist */,
+			);
+			path = GeoSave;
+			sourceTree = "<group>";
+		};
+		12B741BA1E5350D200DCCA79 /* GeoSaveTests */ = {
+			isa = PBXGroup;
+			children = (
+				12B741BB1E5350D200DCCA79 /* GeoSaveTests.swift */,
+				12B741BD1E5350D200DCCA79 /* Info.plist */,
+			);
+			path = GeoSaveTests;
+			sourceTree = "<group>";
+		};
+		12B741C51E5350D200DCCA79 /* GeoSaveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				12B741C61E5350D200DCCA79 /* GeoSaveUITests.swift */,
+				12B741C81E5350D200DCCA79 /* Info.plist */,
+			);
+			path = GeoSaveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12B741A01E5350D200DCCA79 /* GeoSave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B741CB1E5350D200DCCA79 /* Build configuration list for PBXNativeTarget "GeoSave" */;
+			buildPhases = (
+				12B7419D1E5350D200DCCA79 /* Sources */,
+				12B7419E1E5350D200DCCA79 /* Frameworks */,
+				12B7419F1E5350D200DCCA79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeoSave;
+			productName = GeoSave;
+			productReference = 12B741A11E5350D200DCCA79 /* GeoSave.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12B741B61E5350D200DCCA79 /* GeoSaveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B741CE1E5350D200DCCA79 /* Build configuration list for PBXNativeTarget "GeoSaveTests" */;
+			buildPhases = (
+				12B741B31E5350D200DCCA79 /* Sources */,
+				12B741B41E5350D200DCCA79 /* Frameworks */,
+				12B741B51E5350D200DCCA79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12B741B91E5350D200DCCA79 /* PBXTargetDependency */,
+			);
+			name = GeoSaveTests;
+			productName = GeoSaveTests;
+			productReference = 12B741B71E5350D200DCCA79 /* GeoSaveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		12B741C11E5350D200DCCA79 /* GeoSaveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B741D11E5350D200DCCA79 /* Build configuration list for PBXNativeTarget "GeoSaveUITests" */;
+			buildPhases = (
+				12B741BE1E5350D200DCCA79 /* Sources */,
+				12B741BF1E5350D200DCCA79 /* Frameworks */,
+				12B741C01E5350D200DCCA79 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12B741C41E5350D200DCCA79 /* PBXTargetDependency */,
+			);
+			name = GeoSaveUITests;
+			productName = GeoSaveUITests;
+			productReference = 12B741C21E5350D200DCCA79 /* GeoSaveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12B741991E5350D200DCCA79 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = valentinkajdan;
+				TargetAttributes = {
+					12B741A01E5350D200DCCA79 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					12B741B61E5350D200DCCA79 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 12B741A01E5350D200DCCA79;
+					};
+					12B741C11E5350D200DCCA79 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 12B741A01E5350D200DCCA79;
+					};
+				};
+			};
+			buildConfigurationList = 12B7419C1E5350D200DCCA79 /* Build configuration list for PBXProject "GeoSave" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12B741981E5350D200DCCA79;
+			productRefGroup = 12B741A21E5350D200DCCA79 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12B741A01E5350D200DCCA79 /* GeoSave */,
+				12B741B61E5350D200DCCA79 /* GeoSaveTests */,
+				12B741C11E5350D200DCCA79 /* GeoSaveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12B7419F1E5350D200DCCA79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B741B11E5350D200DCCA79 /* LaunchScreen.storyboard in Resources */,
+				12B741AE1E5350D200DCCA79 /* Assets.xcassets in Resources */,
+				12B741AC1E5350D200DCCA79 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B741B51E5350D200DCCA79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B741C01E5350D200DCCA79 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12B7419D1E5350D200DCCA79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B741A91E5350D200DCCA79 /* DetailViewController.swift in Sources */,
+				12B741A71E5350D200DCCA79 /* MasterViewController.swift in Sources */,
+				12B741A51E5350D200DCCA79 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B741B31E5350D200DCCA79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B741BC1E5350D200DCCA79 /* GeoSaveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B741BE1E5350D200DCCA79 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B741C71E5350D200DCCA79 /* GeoSaveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12B741B91E5350D200DCCA79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12B741A01E5350D200DCCA79 /* GeoSave */;
+			targetProxy = 12B741B81E5350D200DCCA79 /* PBXContainerItemProxy */;
+		};
+		12B741C41E5350D200DCCA79 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12B741A01E5350D200DCCA79 /* GeoSave */;
+			targetProxy = 12B741C31E5350D200DCCA79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		12B741AA1E5350D200DCCA79 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12B741AB1E5350D200DCCA79 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		12B741AF1E5350D200DCCA79 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12B741B01E5350D200DCCA79 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12B741C91E5350D200DCCA79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		12B741CA1E5350D200DCCA79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12B741CC1E5350D200DCCA79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GeoSave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lpdw2016.GeoSave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		12B741CD1E5350D200DCCA79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GeoSave/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lpdw2016.GeoSave;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		12B741CF1E5350D200DCCA79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GeoSaveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lpdw2016.GeoSaveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoSave.app/GeoSave";
+			};
+			name = Debug;
+		};
+		12B741D01E5350D200DCCA79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GeoSaveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lpdw2016.GeoSaveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoSave.app/GeoSave";
+			};
+			name = Release;
+		};
+		12B741D21E5350D200DCCA79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GeoSaveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lpdw2016.GeoSaveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GeoSave;
+			};
+			name = Debug;
+		};
+		12B741D31E5350D200DCCA79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GeoSaveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lpdw2016.GeoSaveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GeoSave;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12B7419C1E5350D200DCCA79 /* Build configuration list for PBXProject "GeoSave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B741C91E5350D200DCCA79 /* Debug */,
+				12B741CA1E5350D200DCCA79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12B741CB1E5350D200DCCA79 /* Build configuration list for PBXNativeTarget "GeoSave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B741CC1E5350D200DCCA79 /* Debug */,
+				12B741CD1E5350D200DCCA79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		12B741CE1E5350D200DCCA79 /* Build configuration list for PBXNativeTarget "GeoSaveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B741CF1E5350D200DCCA79 /* Debug */,
+				12B741D01E5350D200DCCA79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		12B741D11E5350D200DCCA79 /* Build configuration list for PBXNativeTarget "GeoSaveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B741D21E5350D200DCCA79 /* Debug */,
+				12B741D31E5350D200DCCA79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12B741991E5350D200DCCA79 /* Project object */;
+}
