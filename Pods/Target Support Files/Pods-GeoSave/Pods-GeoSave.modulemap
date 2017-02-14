@@ -1,0 +1,6 @@
+framework module Pods_GeoSave {
+  umbrella header "Pods-GeoSave-umbrella.h"
+
+  export *
+  module * { export * }
+}
