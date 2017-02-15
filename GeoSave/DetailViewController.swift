@@ -62,7 +62,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         let place = Geoplace(coordinate: locValue);
         self.mapView.addAnnotation(place)
         
-        Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
+        // save my location
+        //Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
         
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
