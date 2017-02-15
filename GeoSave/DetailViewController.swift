@@ -45,10 +45,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             let longitude: Double
         }
         
-       /* let locations = [
-            Location(title: "New York, NY",    latitude: 40.713054, longitude: -74.007228),
-            Location(title: "Los Angeles, CA", latitude: 34.052238, longitude: -118.243344),
-            Location(title: "Chicago, IL",     latitude: 41.883229, longitude: -87.632398)
+        let locations = [
+            Location(title: "Campus ERDF GrDF",  latitude: 48.9283294, longitude: 2.30626715),
+            Location(title: "Cinéma CGR Epinay",latitude: 48.9283294, longitude: 2.306267),
+            Location(title: "Leroy Merlin Gennevilliers",latitude: 48.9283294, longitude: 2.306267),
         ]
         
         for location in locations {
@@ -56,7 +56,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             annotation.title = location.title
             annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             mapView.addAnnotation(annotation)
-        }*/
+        }
     }
     
     func determineCurrentLocation()
