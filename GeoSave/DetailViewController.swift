@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
+import Alamofire
+import MapKit
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
+    var locationManager:CLLocationManager!
+    
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
@@ -24,22 +30,61 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
+        
+        self.determineCurrentLocation()
+    }
+    
+    func determineCurrentLocation()
+    {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // Ask for Authorisation from the User.
+        locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            //locationManager.startUpdatingHeading()
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        
+        let place = Geoplace(coordinate: locValue);
+        self.mapView.addAnnotation(place)
+        
+        let defaults = UserDefaults.standard
+        let a = defaults.array(forKey: "a")
+        defaults.set(a, forKey: "a")
+        defaults.synchronize()
+        
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // update the map to set the user location
     var detailItem: NSDate? {
         didSet {
             // Update the view.
             self.configureView()
         }
     }
-
-
+    
+    
 }
+
 

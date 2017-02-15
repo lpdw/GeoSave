@@ -11,7 +11,9 @@ import Alamofire
 
 class MasterViewController: UITableViewController {
 
+    // les différentes tables listes
     var detailViewController: DetailViewController? = nil
+    // model contenant la liste des lieux
     var objects = [Any]()
 
 
@@ -20,8 +22,11 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem
 
+        
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
+       
+        // ne pas toucher
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -44,7 +49,7 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
-    // MARK: - Segues
+    // MARK: - Segues ==> router navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
