@@ -58,13 +58,11 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         
+        
         let place = Geoplace(coordinate: locValue);
         self.mapView.addAnnotation(place)
         
-        let defaults = UserDefaults.standard
-        let a = defaults.array(forKey: "a")
-        defaults.set(a, forKey: "a")
-        defaults.synchronize()
+        Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
         
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
