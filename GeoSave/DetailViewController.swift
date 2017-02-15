@@ -14,9 +14,11 @@ import MapKit
 class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     var locationManager:CLLocationManager!
+    var locValue=CLLocationCoordinate2D()
     
-    @IBOutlet weak var mapView: MKMapView!
+    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
 
 
     func configureView() {
@@ -35,6 +37,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         self.configureView()
         
         self.determineCurrentLocation()
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = self.locValue
+        mapView.addAnnotation(annotation)
     }
     
     func determineCurrentLocation()
@@ -56,16 +62,20 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        self.locValue = manager.location!.coordinate
         
         
         let place = Geoplace(coordinate: locValue);
         self.mapView.addAnnotation(place)
         
+        
+        
         // save my location
         //Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
         
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+       
         
     }
 
