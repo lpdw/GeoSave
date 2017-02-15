@@ -13,14 +13,16 @@ import MapKit
 
 class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    var locationManager:CLLocationManager!
     var locValue=CLLocationCoordinate2D()
     
     
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
+    let locationManager = CLLocationManager()
+    let geoCoder = CLGeocoder()
 
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = self.detailItem {
@@ -37,17 +39,31 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         self.configureView()
         
         self.determineCurrentLocation()
+        struct Location {
+            let title: String
+            let latitude: Double
+            let longitude: Double
+        }
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = self.locValue
-        mapView.addAnnotation(annotation)
+       /* let locations = [
+            Location(title: "New York, NY",    latitude: 40.713054, longitude: -74.007228),
+            Location(title: "Los Angeles, CA", latitude: 34.052238, longitude: -118.243344),
+            Location(title: "Chicago, IL",     latitude: 41.883229, longitude: -87.632398)
+        ]
+        
+        for location in locations {
+            let annotation = MKPointAnnotation()
+            annotation.title = location.title
+            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            mapView.addAnnotation(annotation)
+        }*/
     }
     
     func determineCurrentLocation()
     {
-        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = 100.0
         
         // Ask for Authorisation from the User.
         locationManager.requestAlwaysAuthorization()
@@ -62,11 +78,32 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.locValue = manager.location!.coordinate
+        if let location = locations.last {
+            self.locValue = location.coordinate
+            
+            geoCoder.reverseGeocodeLocation(location) { (placemarks: [CLPlacemark]?, error: Error?) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                if let placemark = placemarks?.last {
+                    print(placemark.debugDescription)
+                    let address = placemark.addressDictionary
+                    let place = Geoplace(coordinate: self.locValue)
+                    place.title = address?["Street"] as? String
+                    place.subtitle = address?["City"] as? String
+                    self.mapView.addAnnotation(place)
+                }
+            }
+            
+            
+            let camera = MKMapCamera(lookingAtCenter: self.locValue, fromEyeCoordinate:  self.locValue, eyeAltitude: 5000.0)
+            self.mapView.setCamera(camera, animated: true)
+        }
         
         
-        let place = Geoplace(coordinate: locValue);
-        self.mapView.addAnnotation(place)
+        
         
         
         
