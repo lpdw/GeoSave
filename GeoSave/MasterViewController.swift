@@ -25,6 +25,8 @@ class MasterViewController: UITableViewController {
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         self.navigationItem.rightBarButtonItem = addButton
+        
+        insertNewObject(self)
        
         // ne pas toucher
         if let split = self.splitViewController {
@@ -47,6 +49,9 @@ class MasterViewController: UITableViewController {
         objects.insert(NSDate(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        self.performSegue(withIdentifier: "showDetail", sender: self)
     }
 
     // MARK: - Segues ==> router navigation
