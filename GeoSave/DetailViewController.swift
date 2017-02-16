@@ -15,13 +15,18 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     var locValue=CLLocationCoordinate2D()
     
-    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
 
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
-
+    
+    
+    @IBAction func enregistrer(_ sender: Any) {
+        self.detailDescriptionLabel.text = "Enregistrer !"
+        //let place = Geoplace()
+        //place.saveMyLocation()
+    }
     
     func configureView() {
         // Update the user interface for the detail item.
