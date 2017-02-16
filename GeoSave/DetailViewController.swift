@@ -13,7 +13,7 @@ import MapKit
 
 class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    var locValue=CLLocationCoordinate2D()
+    var locValue = CLLocationCoordinate2D()
     
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -24,8 +24,8 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBAction func enregistrer(_ sender: Any) {
         self.detailDescriptionLabel.text = "Enregistrer !"
-        //let place = Geoplace()
-        //place.saveMyLocation()
+        //let place = Geoplace(coordinate: locValue, title: "Université")
+       // place.saveMyLocation(placename: "Université")
     }
     
     func configureView() {
@@ -44,24 +44,27 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         self.configureView()
         
         self.determineCurrentLocation()
-        struct Location {
-            let title: String
-            let latitude: Double
-            let longitude: Double
-        }
         
-        let locations = [
-            Location(title: "Campus ERDF GrDF",  latitude: 48.9283294, longitude: 2.30626715),
-            Location(title: "Cinéma CGR Epinay",latitude: 48.9283294, longitude: 2.306267),
-            Location(title: "Leroy Merlin Gennevilliers",latitude: 48.9283294, longitude: 2.306267),
-        ]
+
         
-        for location in locations {
-            let annotation = MKPointAnnotation()
-            annotation.title = location.title
-            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            mapView.addAnnotation(annotation)
-        }
+//        struct Location {
+//            let title: String
+//            let latitude: Double
+//            let longitude: Double
+//        }
+//        
+//        let locations = [
+//            Location(title: "Campus ERDF GrDF",  latitude: 48.9283294, longitude: 2.30626715),
+//            Location(title: "Cinéma CGR Epinay",latitude: 48.9283294, longitude: 2.306267),
+//            Location(title: "Leroy Merlin Gennevilliers",latitude: 48.9283294, longitude: 2.306267),
+//        ]
+//        
+//        for location in locations {
+//            let annotation = MKPointAnnotation()
+//            annotation.title = location.title
+//            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+//            mapView.addAnnotation(annotation)
+//        }
     }
     
     func determineCurrentLocation()
@@ -95,21 +98,18 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 if let placemark = placemarks?.last {
                     print(placemark.debugDescription)
                     let address = placemark.addressDictionary
-                    let place = Geoplace(coordinate: self.locValue)
-                    place.title = address?["Street"] as? String
-                    place.subtitle = address?["City"] as? String
+                    let title = address?["Street"] as? String
+                    _ = address?["City"] as? String
+                    
+                    let place = Geoplace(coordinate: self.locValue, title : title!)
                     self.mapView.addAnnotation(place)
                 }
             }
             
-            
+            //let center = AppDelegate.instance().center
             let camera = MKMapCamera(lookingAtCenter: self.locValue, fromEyeCoordinate:  self.locValue, eyeAltitude: 5000.0)
             self.mapView.setCamera(camera, animated: true)
         }
-        
-        
-        
-        
         
         
         // save my location

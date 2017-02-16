@@ -47,8 +47,9 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
+        
         let coordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
-        let place = Geoplace(coordinate: coordinate)
+        let place = Geoplace(coordinate: coordinate, title: "Université")
         objects.insert(place, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
@@ -85,7 +86,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         let object = objects[indexPath.row]
-        cell.textLabel!.text = object.description
+        cell.textLabel!.text = object.title
         return cell
     }
 
