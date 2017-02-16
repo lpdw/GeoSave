@@ -14,7 +14,6 @@ class Geoplace: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
-    let defaults = UserDefaults.standard
     
     init(coordinate: CLLocationCoordinate2D, title: String) {
         self.coordinate = coordinate
@@ -24,8 +23,9 @@ class Geoplace: NSObject, MKAnnotation {
     
     
     func saveMyLocation(placename: String) {
+        let defaults = UserDefaults.standard
         //let newCoordinate = self.defaults.array(forKey: "a")
-        self.defaults.set(self.coordinate, forKey: placename)
-        self.defaults.synchronize()
+        defaults.set(self.coordinate, forKey: placename)
+        defaults.synchronize()
     }
 }

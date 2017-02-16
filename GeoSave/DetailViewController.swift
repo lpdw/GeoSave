@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var nameTextField: UITextField!
 
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
@@ -24,8 +25,10 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBAction func enregistrer(_ sender: Any) {
         self.detailDescriptionLabel.text = "Enregistrer !"
-        //let place = Geoplace(coordinate: locValue, title: "Université")
-       // place.saveMyLocation(placename: "Université")
+        if let name = nameTextField.text {
+            let place = Geoplace(coordinate: locValue, title: name)
+            place.saveMyLocation(placename: name)
+        }
     }
     
     func configureView() {

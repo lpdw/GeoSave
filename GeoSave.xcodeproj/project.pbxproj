@@ -15,6 +15,7 @@
 		12B741B11E5350D200DCCA79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12B741AF1E5350D200DCCA79 /* LaunchScreen.storyboard */; };
 		12B741BC1E5350D200DCCA79 /* GeoSaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B741BB1E5350D200DCCA79 /* GeoSaveTests.swift */; };
 		12B741C71E5350D200DCCA79 /* GeoSaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B741C61E5350D200DCCA79 /* GeoSaveUITests.swift */; };
+		C4848D2C1E55E3E800862FDD /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4848D2B1E55E3E800862FDD /* CurrentLocationViewController.swift */; };
 		C4908F971E548FAD007CA4BE /* Geoplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4908F961E548FAD007CA4BE /* Geoplace.swift */; };
 		CB23D0604E27C881B6B57B7C /* Pods_GeoSave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63DFA6B4363816871488AB2 /* Pods_GeoSave.framework */; };
 		CCE8394FA3A8187F34C3C42B /* Pods_GeoSaveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8582777663819F2333848542 /* Pods_GeoSaveUITests.framework */; };
@@ -60,6 +61,7 @@
 		43ED14213ED03624CDB787AB /* Pods-GeoSaveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoSaveTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeoSaveTests/Pods-GeoSaveTests.release.xcconfig"; sourceTree = "<group>"; };
 		826F7187E85FD07029F9FE2A /* Pods_GeoSaveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoSaveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8582777663819F2333848542 /* Pods_GeoSaveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoSaveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4848D2B1E55E3E800862FDD /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		C4908F961E548FAD007CA4BE /* Geoplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geoplace.swift; sourceTree = "<group>"; };
 		F63DFA6B4363816871488AB2 /* Pods_GeoSave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoSave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE63BDE61B3B6B73E7F0059 /* Pods-GeoSave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoSave.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeoSave/Pods-GeoSave.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				12B741A41E5350D200DCCA79 /* AppDelegate.swift */,
 				12B741A61E5350D200DCCA79 /* MasterViewController.swift */,
 				12B741A81E5350D200DCCA79 /* DetailViewController.swift */,
+				C4848D2B1E55E3E800862FDD /* CurrentLocationViewController.swift */,
 				C4908F961E548FAD007CA4BE /* Geoplace.swift */,
 				12B741AA1E5350D200DCCA79 /* Main.storyboard */,
 				12B741AD1E5350D200DCCA79 /* Assets.xcassets */,
@@ -453,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12B741A91E5350D200DCCA79 /* DetailViewController.swift in Sources */,
+				C4848D2C1E55E3E800862FDD /* CurrentLocationViewController.swift in Sources */,
 				C4908F971E548FAD007CA4BE /* Geoplace.swift in Sources */,
 				12B741A71E5350D200DCCA79 /* MasterViewController.swift in Sources */,
 				12B741A51E5350D200DCCA79 /* AppDelegate.swift in Sources */,

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +28,7 @@
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="GeoSave" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="JEX-9P-axG" customClass="DetailViewController" customModule="GeoSave" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
                         <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
@@ -38,41 +37,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="88" width="335" height="17"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Dg-S3-3mH">
-                                <rect key="frame" x="7" y="125" width="375" height="534"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9Dg-S3-3mH">
+                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="777-I2-qg9">
-                                <rect key="frame" x="325" y="85" width="22" height="22"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kRX-zR-Yj0">
+                                <rect key="frame" x="28" y="80" width="303" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="enregistrer:" destination="JEX-9P-axG" eventType="touchUpInside" id="XAc-0a-K7T"/>
-                                </connections>
-                            </button>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.50970313863228578" green="0.65199267545993222" blue="0.72340381145477295" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="-9" id="80h-66-bRx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Dg-S3-3mH" secondAttribute="trailing" constant="-8" id="IQo-Pg-FxP"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="24" id="KoC-Hv-KnX"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="19" id="feC-gG-T9S"/>
-                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="9Dg-S3-3mH" secondAttribute="bottom" constant="8" id="gkK-EL-I6H"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
-                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" id="twm-zD-udc"/>
+                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="height" secondItem="svH-Pt-448" secondAttribute="height" id="JbU-m0-hc4"/>
+                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="YWC-8j-Tdc"/>
+                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="61" id="f2f-7D-kDJ"/>
+                            <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="9Dg-S3-3mH" secondAttribute="bottom" id="fGK-r8-H1e"/>
+                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="sLm-3z-cyo"/>
+                            <constraint firstItem="9Dg-S3-3mH" firstAttribute="width" secondItem="svH-Pt-448" secondAttribute="width" id="xJU-21-lS9"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Favorites places" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="GEOSAVE" id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                         <outlet property="mapView" destination="9Dg-S3-3mH" id="qnv-wj-6Gv"/>
+                        <outlet property="nameTextField" destination="kRX-zR-Yj0" id="HoZ-8x-gAz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -102,8 +92,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentLocation" textLabel="0fu-j2-PPA" style="IBUITableViewCellStyleDefault" id="T1V-GB-iNd">
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T1V-GB-iNd" id="eS3-v1-RUc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Position courante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0fu-j2-PPA">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ugv-Of-rus" kind="showDetail" identifier="currentLocation" id="rAf-oT-WZ6"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
+                                <rect key="frame" x="0.0" y="66" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -130,7 +140,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Favorites places" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,8 +162,77 @@
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
+        <!--Detail-->
+        <scene sceneID="AEu-MC-rSq">
+            <objects>
+                <viewController title="Detail" id="meg-fB-Ri6" customClass="CurrentLocationViewController" customModule="GeoSave" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oQY-63-5r6"/>
+                        <viewControllerLayoutGuide type="bottom" id="lkR-Rx-rFh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VXe-rx-Hoh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wjm-je-Feh">
+                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnI-4K-ntZ">
+                                <rect key="frame" x="23" y="84" width="308" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY5-w2-AiU">
+                                <rect key="frame" x="339" y="88" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="enregistrer:" destination="meg-fB-Ri6" eventType="touchUpInside" id="0HT-TZ-2Oj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50970313860000005" green="0.65199267549999995" blue="0.72340381149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wjm-je-Feh" firstAttribute="centerY" secondItem="VXe-rx-Hoh" secondAttribute="centerY" id="1wz-c6-Hlu"/>
+                            <constraint firstItem="lkR-Rx-rFh" firstAttribute="top" secondItem="wjm-je-Feh" secondAttribute="bottom" id="BK7-qo-N0O"/>
+                            <constraint firstItem="wjm-je-Feh" firstAttribute="height" secondItem="VXe-rx-Hoh" secondAttribute="height" id="Cn4-3l-C2Q"/>
+                            <constraint firstItem="wjm-je-Feh" firstAttribute="top" secondItem="oQY-63-5r6" secondAttribute="bottom" constant="61" id="Fqx-DC-TME"/>
+                            <constraint firstItem="wjm-je-Feh" firstAttribute="width" secondItem="VXe-rx-Hoh" secondAttribute="width" id="eEQ-Xc-T6K"/>
+                            <constraint firstItem="wjm-je-Feh" firstAttribute="centerX" secondItem="VXe-rx-Hoh" secondAttribute="centerX" id="n7T-nQ-iCV"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="GEOSAVE2" id="Ezr-1f-xcd"/>
+                    <connections>
+                        <outlet property="mapView" destination="wjm-je-Feh" id="xN0-C1-qPT"/>
+                        <outlet property="nameTextField" destination="MnI-4K-ntZ" id="A4E-a3-1kh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1YJ-H9-8wc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2744.8000000000002" y="127.28635682158921"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mpr-62-f14">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ugv-Of-rus" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="88F-It-jZz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="meg-fB-Ri6" kind="relationship" relationship="rootViewController" id="bNb-Mv-yrC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwD-DO-RpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="128"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>
