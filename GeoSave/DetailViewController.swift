@@ -123,7 +123,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
     // update the map to set the user location
-    var detailItem: NSDate? {
+    var detailItem: Geoplace? {
         didSet {
             // Update the view.
             self.configureView()

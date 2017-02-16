@@ -8,13 +8,14 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
 class MasterViewController: UITableViewController {
 
     // les différentes tables listes
     var detailViewController: DetailViewController? = nil
     // model contenant la liste des lieux
-    var objects = [Any]()
+    var objects = [Geoplace]()
 
 
     override func viewDidLoad() {
@@ -46,7 +47,9 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
+        let coordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+        let place = Geoplace(coordinate: coordinate)
+        objects.insert(place, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
         
@@ -59,7 +62,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                let object = objects[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
@@ -81,7 +84,7 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let object = objects[indexPath.row] as! NSDate
+        let object = objects[indexPath.row]
         cell.textLabel!.text = object.description
         return cell
     }
