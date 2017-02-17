@@ -31,7 +31,7 @@ class MasterViewController: UITableViewController {
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
 //        self.navigationItem.rightBarButtonItem = addButton
         
-       insertNewObject(self)
+       //insertNewObject(sender: self)
        
 
         self.performSegue(withIdentifier: "currentLocation", sender: self)
@@ -64,10 +64,9 @@ class MasterViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func insertNewObject(_ sender: Any) {
-        let coordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
-        let place = Geoplace(coordinate: coordinate)
-        place.saveMyLocation(title: "Save 1")
+    func insertNewObject(geoplace: Geoplace) {
+        let place = Geoplace(coordinate: geoplace.coordinate)
+        place.saveMyLocation(title: geoplace.title!)
         objects.insert(place, at: 0)
         let indexPath = IndexPath(row: 0, section: 1)
         self.tableView.insertRows(at: [indexPath], with: .automatic)

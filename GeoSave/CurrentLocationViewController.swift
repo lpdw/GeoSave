@@ -21,14 +21,15 @@ class CurrentLocationViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let geoCoder = CLGeocoder()
+    var userPosition = CLLocationCoordinate2D()
     
     
     @IBAction func enregistrer(_ sender: Any) {
-       // self.detailDescriptionLabel.text = "Enregistrer !"
-//        if let name = nameTextField.text {
-//            let place = Geoplace(coordinate: locValue, title: name)
-//            place.saveMyLocation(placename: name)
-//        }
+        if let name = nameTextField.text {
+            let place = Geoplace(coordinate: userPosition)
+            place.saveMyLocation(title: name)
+            self.master?.insertNewObject(geoplace: place)
+        }
         
         print("yes")
     }
@@ -62,6 +63,8 @@ class CurrentLocationViewController: UIViewController {
        
                 self.nameTextField.text = title
             }
+            
+            self.userPosition = userLocation.coordinate
         }
         
         let coordinate = userLocation.coordinate
@@ -73,41 +76,6 @@ class CurrentLocationViewController: UIViewController {
 //            setAnnotations(with: geoplaces)
 //        }
     }
-    
-    
-    func setAnnotations(with fountains: [[String: Any]]) {
-        
-        let centerLocation = CLLocation(latitude: centerLat, longitude: centerLon)
-       
-        
-        let annotations = fountains
-            .flatMap { (content: [String : Any]) -> MKAnnotation? in
-                if  let loc = content["loc"] as? [String: Any],
-                    let lat = loc["lat"] as? CLLocationDegrees,
-                    let lon = loc["lon"] as? CLLocationDegrees
-                {
-                    let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-                    let geoplaces = Geoplace(coordinate: coordinate)
-                    return geoplaces
-                }
-                return nil
-            }
-            .sorted { /* (f0: MKAnnotation, f1: MKAnnotation) -> Bool in */
-                let location0 = CLLocation(latitude: $0.coordinate.latitude,
-                                           longitude: $0.coordinate.longitude)
-                let location1 = CLLocation(latitude: $1.coordinate.latitude,
-                                           longitude: $1.coordinate.longitude)
-                let distance0 = centerLocation.distance(from: location0)
-                let distance1 = centerLocation.distance(from: location1)
-                
-                return distance0 < distance1
-        }
-        
-        self.mapView.addAnnotations(annotations)
-    }
-    
-
-    
     
     func configureView() {
 
