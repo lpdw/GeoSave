@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     var locValue = CLLocationCoordinate2D()
     
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var nameTextField: UITextField!
 
@@ -23,51 +23,27 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     let geoCoder = CLGeocoder()
     
     
-    @IBAction func enregistrer(_ sender: Any) {
-        self.detailDescriptionLabel.text = "Enregistrer !"
-        if let name = nameTextField.text {
-            let place = Geoplace(coordinate: locValue, title: name)
-            place.saveMyLocation(placename: name)
-        }
-    }
-    
     func configureView() {
+        
         // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
+        
+                if let detail = self.detailItem {
+                    if let label = self.nameTextField {
+                        label.text = detail.title
+                    }
+                }
+
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         
         self.determineCurrentLocation()
-        
 
-        
-//        struct Location {
-//            let title: String
-//            let latitude: Double
-//            let longitude: Double
-//        }
-//        
-//        let locations = [
-//            Location(title: "Campus ERDF GrDF",  latitude: 48.9283294, longitude: 2.30626715),
-//            Location(title: "Cinéma CGR Epinay",latitude: 48.9283294, longitude: 2.306267),
-//            Location(title: "Leroy Merlin Gennevilliers",latitude: 48.9283294, longitude: 2.306267),
-//        ]
-//        
-//        for location in locations {
-//            let annotation = MKPointAnnotation()
-//            annotation.title = location.title
-//            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-//            mapView.addAnnotation(annotation)
-//        }
     }
     
     func determineCurrentLocation()
@@ -104,7 +80,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     let title = address?["Street"] as? String
                     _ = address?["City"] as? String
                     
-                    let place = Geoplace(coordinate: self.locValue, title : title!)
+                    let place = Geoplace(coordinate: self.locValue)
                     self.mapView.addAnnotation(place)
                 }
             }
@@ -114,9 +90,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
             self.mapView.setCamera(camera, animated: true)
         }
         
-        
-        // save my location
-        //Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
+        // TODO : Enregistrer title après modification
         
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         

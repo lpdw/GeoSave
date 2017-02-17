@@ -31,7 +31,7 @@ class MasterViewController: UITableViewController {
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
 //        self.navigationItem.rightBarButtonItem = addButton
         
-//        insertNewObject(self)
+       insertNewObject(self)
        
 
         if let split = self.splitViewController {
@@ -65,7 +65,8 @@ class MasterViewController: UITableViewController {
     func insertNewObject(_ sender: Any) {
         
         let coordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
-        let place = Geoplace(coordinate: coordinate, title: "Université")
+        let place = Geoplace(coordinate: coordinate)
+        place.saveMyLocation(title: "Save 1")
         objects.insert(place, at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)

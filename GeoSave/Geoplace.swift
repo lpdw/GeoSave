@@ -15,17 +15,17 @@ class Geoplace: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     
-    init(coordinate: CLLocationCoordinate2D, title: String) {
+    init(coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
-        self.title = title
+//        self.title = title
         super.init()
     }
     
     
-    func saveMyLocation(placename: String) {
+    func saveMyLocation(title: String) {
         let defaults = UserDefaults.standard
-        //let newCoordinate = self.defaults.array(forKey: "a")
-        defaults.set(self.coordinate, forKey: placename)
+        let newCoordinate = defaults.array(forKey: "a")
+        defaults.set(newCoordinate, forKey: title)
         defaults.synchronize()
     }
 }

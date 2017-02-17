@@ -24,37 +24,39 @@ class CurrentLocationViewController: UIViewController {
     
     @IBAction func enregistrer(_ sender: Any) {
        // self.detailDescriptionLabel.text = "Enregistrer !"
-        if let name = nameTextField.text {
-            let place = Geoplace(coordinate: locValue, title: name)
-            place.saveMyLocation(placename: name)
-        }
+//        if let name = nameTextField.text {
+//            let place = Geoplace(coordinate: locValue, title: name)
+//            place.saveMyLocation(placename: name)
+//        }
+        
+        print("yes")
     }
     
     func configureView() {
-        // Update the user interface for the detail item.
-        let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-        geoCoder.reverseGeocodeLocation(location) { (placemarks: [CLPlacemark]?, error: Error?) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            if let placemark = placemarks?.last {
-                print(placemark.debugDescription)
-                let address = placemark.addressDictionary
-                let title = address?["Street"] as? String
-                _ = address?["City"] as? String
-                
-                self.nameTextField.text = title
-                                    let place = Geoplace(coordinate: self.locValue, title : title!)
-                                    self.mapView.addAnnotation(place)
-            }
-        }
+                let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
+                geoCoder.reverseGeocodeLocation(location) { (placemarks: [CLPlacemark]?, error: Error?) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
         
-        //let center = AppDelegate.instance().center
-        let camera = MKMapCamera(lookingAtCenter: self.locValue, fromEyeCoordinate:  self.locValue, eyeAltitude: 5000.0)
-        self.mapView.setCamera(camera, animated: true)
+                    if let placemark = placemarks?.last {
+                        print(placemark.debugDescription)
+                        let address = placemark.addressDictionary
+                        let title = address?["Street"] as? String
+                        _ = address?["City"] as? String
+        
+                        self.nameTextField.text = title
+                        let place = Geoplace(coordinate: self.locValue)
+                        self.mapView.addAnnotation(place)
+                    }
+                }
+        
+                //let center = AppDelegate.instance().center
+                let camera = MKMapCamera(lookingAtCenter: self.locValue, fromEyeCoordinate:  self.locValue, eyeAltitude: 5000.0)
+                self.mapView.setCamera(camera, animated: true)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,9 +91,9 @@ class CurrentLocationViewController: UIViewController {
             
         }
         
-        
+         // TODO : Enregistrer la position actuelle
         // save my location
-        //Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
+//        Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
         
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
@@ -103,6 +105,8 @@ class CurrentLocationViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+
     }
     
     
