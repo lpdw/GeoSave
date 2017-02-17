@@ -48,23 +48,23 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
 
     }
     
-    func determineCurrentLocation()
-    {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 100.0
-        
-        // Ask for Authorisation from the User.
-        locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            //locationManager.startUpdatingHeading()
-            locationManager.startUpdatingLocation()
-        }
-    }
+//    func determineCurrentLocation()
+//    {
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.distanceFilter = 100.0
+//        
+//        // Ask for Authorisation from the User.
+//        locationManager.requestAlwaysAuthorization()
+//        
+//        // For use in foreground
+//        self.locationManager.requestWhenInUseAuthorization()
+//        
+//        if CLLocationManager.locationServicesEnabled() {
+//            //locationManager.startUpdatingHeading()
+//            locationManager.startUpdatingLocation()
+//        }
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {

@@ -13,7 +13,7 @@ import MapKit
 class CurrentLocationViewController: UIViewController {
     
     var master: MasterViewController?
-    var locValue = CLLocationCoordinate2D()
+
     
     //@IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -39,27 +39,9 @@ class CurrentLocationViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(locationDidChange), name: NSNotification.Name.locationDidChange, object: nil)
         
         // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        //self.configureView()
         
         
-        //        struct Location {
-        //            let title: String
-        //            let latitude: Double
-        //            let longitude: Double
-        //        }
-        //
-        //        let locations = [
-        //            Location(title: "Campus ERDF GrDF",  latitude: 48.9283294, longitude: 2.30626715),
-        //            Location(title: "Cinéma CGR Epinay",latitude: 48.9283294, longitude: 2.306267),
-        //            Location(title: "Leroy Merlin Gennevilliers",latitude: 48.9283294, longitude: 2.306267),
-        //        ]
-        //
-        //        for location in locations {
-        //            let annotation = MKPointAnnotation()
-        //            annotation.title = location.title
-        //            annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-        //            mapView.addAnnotation(annotation)
-        //        }
     }
     
     
@@ -77,14 +59,13 @@ class CurrentLocationViewController: UIViewController {
                 let address = placemark.addressDictionary
                 let title = address?["Street"] as? String
                 _ = address?["City"] as? String
-                
+       
                 self.nameTextField.text = title
-                let place = Geoplace(coordinate: self.locValue)
-                self.mapView.addAnnotation(place)
             }
         }
         
         let coordinate = userLocation.coordinate
+      
         let camera = MKMapCamera(lookingAtCenter: coordinate, fromEyeCoordinate:  coordinate, eyeAltitude: 5000.0)
         self.mapView.setCamera(camera, animated: true)
         
@@ -129,46 +110,10 @@ class CurrentLocationViewController: UIViewController {
     
     
     func configureView() {
-//                let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
-//                geoCoder.reverseGeocodeLocation(location) { (placemarks: [CLPlacemark]?, error: Error?) in
-//                    if let error = error {
-//                        print(error.localizedDescription)
-//                        return
-//                    }
-//        
-//                    if let placemark = placemarks?.last {
-//                        print(placemark.debugDescription)
-//                        let address = placemark.addressDictionary
-//                        let title = address?["Street"] as? String
-//                        _ = address?["City"] as? String
-//        
-//                        self.nameTextField.text = title
-//                        let place = Geoplace(coordinate: self.locValue)
-//                        self.mapView.addAnnotation(place)
-//                    }
-//                }
-//        
-//                //let center = AppDelegate.instance().center
-//                let camera = MKMapCamera(lookingAtCenter: self.locValue, fromEyeCoordinate:  self.locValue, eyeAltitude: 5000.0)
-//                self.mapView.setCamera(camera, animated: true)
-    }
-    
-    
-       func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            self.locValue = location.coordinate
-            
-        }
-        
-         // TODO : Enregistrer la position actuelle
-        // save my location
-//        Geoplace(coordinate: locValue).saveMyLocation(placename: "test")
-        
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        
-        
+
         
     }
+
     
     
     override func didReceiveMemoryWarning() {

@@ -65,7 +65,6 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
-        
         let coordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
         let place = Geoplace(coordinate: coordinate)
         place.saveMyLocation(title: "Save 1")
@@ -85,7 +84,7 @@ class MasterViewController: UITableViewController {
         switch identifier {
             case "currentLocation":
                 let controller = (segue.destination as! UINavigationController).topViewController as! CurrentLocationViewController
-                controller.master = self
+                    controller.master = self
                 
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
