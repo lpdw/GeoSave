@@ -16,7 +16,7 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     // model contenant la liste des lieux
     var objects = [Geoplace]()
-
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +116,8 @@ class MasterViewController: UITableViewController {
             return objects.count
         }
     }
-
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
@@ -125,8 +126,10 @@ class MasterViewController: UITableViewController {
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             
+            
+            
             let object = objects[indexPath.row]
-            cell.textLabel!.text = "Université"
+            cell.textLabel!.text = object.title
             return cell
         }
     }
