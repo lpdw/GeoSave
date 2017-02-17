@@ -42,7 +42,7 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
         // Do any additional setup after loading the view, typically from a nib.
         self.configureView()
         
-//        self.determineCurrentLocation()
+  //     self.determineCurrentLocation()
         
         // self.mapView.addAnnotation(detailItem)
 
