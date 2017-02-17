@@ -24,7 +24,8 @@ class Geoplace: NSObject, MKAnnotation {
     
     func saveMyLocation(title: String) {
         let defaults = UserDefaults.standard
-        let newCoordinate = defaults.array(forKey: "a")
+        self.title = title
+        let newCoordinate = defaults.array(forKey: title)
         defaults.set(newCoordinate, forKey: title)
         defaults.synchronize()
     }
