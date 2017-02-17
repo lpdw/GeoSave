@@ -34,6 +34,8 @@ class MasterViewController: UITableViewController {
        insertNewObject(self)
        
 
+        self.performSegue(withIdentifier: "currentLocation", sender: self)
+
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -68,11 +70,9 @@ class MasterViewController: UITableViewController {
         let place = Geoplace(coordinate: coordinate)
         place.saveMyLocation(title: "Save 1")
         objects.insert(place, at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
+        let indexPath = IndexPath(row: 0, section: 1)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
         
-        self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-        self.performSegue(withIdentifier: "showDetail", sender: self)
     }
 
     // MARK: - Segues ==> router navigation
@@ -85,7 +85,7 @@ class MasterViewController: UITableViewController {
         switch identifier {
             case "currentLocation":
                 let controller = (segue.destination as! UINavigationController).topViewController as! CurrentLocationViewController
-                controller.locValue = AppDelegate.instance().userLocation!.coordinate
+                controller.master = self
                 
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true

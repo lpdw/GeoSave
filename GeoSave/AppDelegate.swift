@@ -16,7 +16,7 @@ let centerLon = 2.355265
 
 extension Notification.Name {
     static let locationDidChange = Notification.Name("locationDidChange")
-    static let geoplacesDidChange = Notification.Name("fountainsDidChange")
+    static let geoplacesDidChange = Notification.Name("geoplacesDidChange")
 }
 
 @UIApplicationMain
