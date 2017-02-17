@@ -30,7 +30,15 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                 if let detail = self.detailItem {
                     if let label = self.nameTextField {
                         label.text = detail.title
+                        
+//                        let point = MKPointAnnotation()
+//                        point.coordinate = self.detailItem!.coordinate
+                        self.mapView.addAnnotation(self.detailItem!)
+                        
+                        let camera = MKMapCamera(lookingAtCenter: (self.detailItem?.coordinate)!, fromEyeCoordinate:  (self.detailItem?.coordinate)!, eyeAltitude: 5000.0)
+                        self.mapView.setCamera(camera, animated: true)
                     }
+
                 }
 
     }
@@ -68,7 +76,6 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            self.locValue = location.coordinate
             
             geoCoder.reverseGeocodeLocation(location) { (placemarks: [CLPlacemark]?, error: Error?) in
                 if let error = error {
@@ -82,13 +89,13 @@ class DetailViewController: UIViewController, CLLocationManagerDelegate, MKMapVi
                     let title = address?["Street"] as? String
                     _ = address?["City"] as? String
                     
-                    let place = Geoplace(coordinate: self.locValue)
-                    self.mapView.addAnnotation(place)
+                    let place = self.detailItem?.coordinate
+                    self.mapView.addAnnotation(place as! MKAnnotation)
                 }
             }
             
             //let center = AppDelegate.instance().center
-            let camera = MKMapCamera(lookingAtCenter: self.locValue, fromEyeCoordinate:  self.locValue, eyeAltitude: 5000.0)
+            let camera = MKMapCamera(lookingAtCenter: (self.detailItem?.coordinate)!, fromEyeCoordinate:  (self.detailItem?.coordinate)!, eyeAltitude: 5000.0)
             self.mapView.setCamera(camera, animated: true)
         }
         

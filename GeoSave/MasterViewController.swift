@@ -41,6 +41,22 @@ class MasterViewController: UITableViewController {
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
     }
+    
+    func saveObjects() {
+        let places = objects.map { (place: Geoplace) -> [String: Any] in
+            return [
+                "title": place.title ?? "Untitled",
+                "lat": place.coordinate.latitude,
+                "lon": place.coordinate.longitude
+            ]
+        }
+        
+        let defaults = UserDefaults.standard
+        defaults.set(places, forKey: "places")
+        defaults.synchronize()
+   }
+    
+    
 
     func locationDidChange(notification: Notification) {
         guard let userLocation = notification.object as? CLLocation else { return }
@@ -71,6 +87,10 @@ class MasterViewController: UITableViewController {
         let indexPath = IndexPath(row: 0, section: 1)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
         
+    }
+    
+    func getData() {
+       // self.tableView.reloadData()
     }
 
     // MARK: - Segues ==> router navigation
