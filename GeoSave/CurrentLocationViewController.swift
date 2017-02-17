@@ -46,8 +46,8 @@ class CurrentLocationViewController: UIViewController {
                 _ = address?["City"] as? String
                 
                 self.nameTextField.text = title
-                //                    let place = Geoplace(coordinate: self.locValue, title : title!)
-                //                    self.mapView.addAnnotation(place)
+                                    let place = Geoplace(coordinate: self.locValue, title : title!)
+                                    self.mapView.addAnnotation(place)
             }
         }
         
